@@ -13,7 +13,7 @@ def lambda_handler(event, context):
             logger.info("Received event: %s", event)
             product_detail = json.loads(event['body'])
             # Ensure the table name is updated to 'prod_purchase'
-            insert_product_query = '''INSERT INTO prod_purchase (item_name, quantity, product_price, tax, total_amount) 
+            insert_product_query = '''INSERT INTO purchase.product (item_name, quantity, product_price, tax, total_amount) 
                                         VALUES (%s, %s, %s, %s, %s)'''
             product_data = [
                 product_detail['item_name'],

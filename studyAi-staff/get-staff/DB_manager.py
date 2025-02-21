@@ -13,14 +13,14 @@ class DatabaseManager:
     def get_db_connection():
         try:
             connection = pymysql.connect(
-                host= '127.0.0.1',
-                user= 'root',
-                passwd= 'Solai2607@cgn!',
-                db= 'purchase',
+                host= 'cogni-db-dev.cp38dsvtanhf.ap-south-1.rds.amazonaws.com',
+                user= 'admin',
+                passwd= 'plazdb!SV',
+                db= 'Study-AI',
                 connect_timeout=5
             )
             logger.info("Successfully connected to the database RDS Proxy.")
             return connection
         except Exception as e:
             logger.error(f"Error connecting to the database: {e}")
-            raise
+            raise  
